@@ -1,15 +1,15 @@
-{% extends "encyclopedia/layout.html" %}
+{% extends 'encyclopedia/layout.html' %}
 
 {% block title %}
-    Encyclopedia
+    Search
 {% endblock %}
 
 {% block body %}
-
-{{ page | safe }}
-
-{% for l in list %}
-{{ list }}
-
-{% endfor %}
+    {% for item in list %}
+        <h2 class="display-4">Did You Mean:</h2>
+        <hr>
+        <li><a href=/wiki/{{item}}>{{ item }}</a></li>
+        {% empty %}
+            <h3>No item</h3>
+    {% endfor %}
 {% endblock %}

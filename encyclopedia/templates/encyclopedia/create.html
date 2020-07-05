@@ -5,8 +5,12 @@
 {% endblock %}
 
 {% block body %}
+<form method="post">
+  {% csrf_token %}
+{{ create }}
+  <input type="submit" name="" value="submit">
+</form>
 
-<h1>ERROR</h1>
-{{ message }}
+
 
 {% endblock %}

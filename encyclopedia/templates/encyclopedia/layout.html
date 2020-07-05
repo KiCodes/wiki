@@ -11,19 +11,19 @@
     <body>
         <div class="row">
             <div class="sidebar col-lg-2 col-md-3">
-                <h2>Wiki</h2>
-                <form class="" action="{% url 'encyclopedia:search' %}" method="post">
-                  {% csrf_token %}
-                  <input class="search" type="text" name="q" placeholder="Search Encyclopedia">
-                </form>
+                <h2 class="display-2">Wiki</h2>
+                <form class="" method="post" action="{% url 'encyclopedia:index' %}">
+                {% csrf_token %}
+                    <h6>Search: {{ form }}</h6>
+                  </form>
                 <div>
-                    <a href="{% url 'encyclopedia:index' %}">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                 </div>
                 <div>
-                    Create New Page
+                    <a class="nav-link" href="{% url 'encyclopedia:create' %}">Create New Page</a>
                 </div>
                 <div>
-                    Random Page
+                    <a class="nav-link" href="{% url 'encyclopedia:random_page' %}">Random Page</a>
                 </div>
                 {% block nav %}
                 {% endblock %}
